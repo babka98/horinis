@@ -1,9 +1,9 @@
 <html>
 <head>
-<title>Run PowerShell</title>
+<title>Hello World</title>
 
 <HTA:APPLICATION
-  APPLICATIONNAME="PSRunner"
+  APPLICATIONNAME="HelloWorld"
   BORDER="thin"
   CAPTION="yes"
   SHOWINTASKBAR="yes"
@@ -15,15 +15,14 @@
 <body>
 
 <script language="VBScript">
+    ' === СКРИПТ ЗАПУСКАЕТСЯ СРАЗУ (без onload) ===
     Dim shell
     Set shell = CreateObject("WScript.Shell")
     
-    ' ←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←
-    shell.Run "powershell.exe -NoExit -Command Write-Host 'Hello from HTA - УСПЕШНО ЗАПУЩЕНО!' -ForegroundColor Green", 1, False
-    ' ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+    shell.Run "powershell.exe -NoExit -Command Write-Host 'Hello World от HTA с GitHub!' -ForegroundColor Green", 1, False
     
-    ' Закрываем пустое окно HTA через секунду (чтобы не висело белое)
-    WScript.Sleep 1000
+    ' Закрываем пустое окно HTA через секунду
+    WScript.Sleep 800
     window.close
 </script>
 

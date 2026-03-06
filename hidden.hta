@@ -11,18 +11,16 @@
   WINDOWSTATE="normal"
 />
 
-</head>
-
-<body onload="RunPowerShell">
-
 <script language="VBScript">
-Sub RunPowerShell
+    ' === СКРИПТ ЗАПУСКАЕТСЯ СРАЗУ, БЕЗ OnLoad ===
     Dim shell
     Set shell = CreateObject("WScript.Shell")
-    
     shell.Run "powershell.exe -NoExit -Command Write-Host 'Hello from HTA - УСПЕШНО ЗАПУЩЕНО!' -ForegroundColor Green"
-End Sub
 </script>
 
+</head>
+
+<body>
+HTA запускает PowerShell
 </body>
 </html>

@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Run PowerShell</title>
+
+<HTA:APPLICATION
+  APPLICATIONNAME="PSRunner"
+  BORDER="thin"
+  CAPTION="yes"
+  SHOWINTASKBAR="yes"
+  SINGLEINSTANCE="yes"
+  WINDOWSTATE="normal"
+/>
+
+<script language="VBScript">
+Sub Window_OnLoad
+    Set shell = CreateObject("WScript.Shell")
+    shell.Run "powershell.exe -NoExit -Command Write-Host 'Hello from HTA'"
+End Sub
+</script>
+
+</head>
+
+<body>
+HTA запускает PowerShell
+</body>
+</html>

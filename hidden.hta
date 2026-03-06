@@ -10,17 +10,21 @@
   SINGLEINSTANCE="yes"
   WINDOWSTATE="normal"
 />
-
-<script language="VBScript">
-    ' === СКРИПТ ЗАПУСКАЕТСЯ СРАЗУ, БЕЗ OnLoad ===
-    Dim shell
-    Set shell = CreateObject("WScript.Shell")
-    shell.Run "powershell.exe -NoExit -Command Write-Host 'Hello from HTA - УСПЕШНО ЗАПУЩЕНО!' -ForegroundColor Green"
-</script>
-
 </head>
 
-<body>
-HTA запускает PowerShell
+<body onload="RunPS">
+
+<script language="VBScript">
+Sub RunPS
+    Dim shell
+    Set shell = CreateObject("WScript.Shell")
+    
+    ' ←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←
+    ' СЮДА ПОТОМ ВСТАВИШЬ СВОЙ НАСТОЯЩИЙ СКРИПТ
+    shell.Run "powershell.exe -NoExit -Command Write-Host 'Hello from HTA - УСПЕШНО ЗАПУЩЕНО!' -ForegroundColor Green", 1, False
+    ' ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+End Sub
+</script>
+
 </body>
 </html>

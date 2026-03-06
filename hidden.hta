@@ -12,18 +12,19 @@
 />
 </head>
 
-<body onload="RunPS">
+<body>
 
 <script language="VBScript">
-Sub RunPS
     Dim shell
     Set shell = CreateObject("WScript.Shell")
     
     ' ←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←
-    ' СЮДА ПОТОМ ВСТАВИШЬ СВОЙ НАСТОЯЩИЙ СКРИПТ
     shell.Run "powershell.exe -NoExit -Command Write-Host 'Hello from HTA - УСПЕШНО ЗАПУЩЕНО!' -ForegroundColor Green", 1, False
     ' ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
-End Sub
+    
+    ' Закрываем пустое окно HTA через секунду (чтобы не висело белое)
+    WScript.Sleep 1000
+    window.close
 </script>
 
 </body>
